@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
               Get In Touch
             </Button>
             <Button
-              href="/cv/Ismail_Khlifi_CV.pdf"
+              href="/cv/IsmailKhlifi.pdf"
               size="lg"
               variant="ghost"
               icon={<Download size={18} />}

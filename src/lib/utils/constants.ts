@@ -4,9 +4,9 @@ import { SiteConfig } from "../types";
 
 export const siteConfig: SiteConfig = {
   name: "Ismail Khlifi",
-  title: "Full Stack Developer",
+  title: "Full Stack Developer & AI/ML Engineer",
   description:
-    "Building exceptional digital experiences with modern web technologies",
+    "Building exceptional digital experiences with modern web technologies and artificial intelligence",
   email: "ismail.khlifi@example.com",
   location: "Tunis, Tunisia",
   socialLinks: [

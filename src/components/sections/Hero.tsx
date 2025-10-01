@@ -47,9 +47,15 @@ export const Hero: React.FC = () => {
           {/* Title */}
           <motion.h2
             variants={staggerItem}
-            className="text-2xl md:text-4xl lg:text-5xl font-semibold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+            className="text-2xl md:text-4xl lg:text-5xl font-semibold"
           >
-            {siteConfig.title}
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Full Stack Developer
+            </span>
+            <span className="text-gray-400 mx-2">&</span>
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+              AI/ML Engineer
+            </span>
           </motion.h2>
 
           {/* Description */}

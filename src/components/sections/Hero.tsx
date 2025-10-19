@@ -115,7 +115,7 @@ export const Hero: React.FC = () => {
                 }
                 className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all"
                 whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.95  }}
                 aria-label={label}
               >
                 <Icon size={20} />

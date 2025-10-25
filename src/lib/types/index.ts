@@ -8,7 +8,7 @@ export interface Project {
   tags: string[];
   image: string;
   github?: string;
-  live?: string;
+  live?: string | null;
   featured: boolean;
   status?: "completed" | "in-development";
   metrics?: {

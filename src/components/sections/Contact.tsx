@@ -27,12 +27,16 @@ export const Contact: React.FC = () => {
       value: siteConfig.email,
       action: () => copyEmail(siteConfig.email),
     },
-    {
-      icon: Mail,
-      label: "Alternative Email",
-      value: siteConfig.secondaryEmail,
-      action: () => copyEmail(siteConfig.secondaryEmail),
-    },
+    ...(siteConfig.secondaryEmail
+      ? [
+          {
+            icon: Mail,
+            label: "Alternative Email",
+            value: siteConfig.secondaryEmail,
+            action: () => copyEmail(siteConfig.secondaryEmail),
+          },
+        ]
+      : []),
     {
       icon: MapPin,
       label: "Location",

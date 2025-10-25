@@ -20,6 +20,8 @@ export const Contact: React.FC = () => {
     setTimeout(() => setCopied(null), 2000);
   };
 
+  const secondaryEmail = siteConfig.secondaryEmail;
+
   const contactInfo = [
     {
       icon: Mail,
@@ -27,13 +29,13 @@ export const Contact: React.FC = () => {
       value: siteConfig.email,
       action: () => copyEmail(siteConfig.email),
     },
-    ...(siteConfig.secondaryEmail
+    ...(secondaryEmail
       ? [
           {
             icon: Mail,
             label: "Alternative Email",
-            value: siteConfig.secondaryEmail,
-            action: () => copyEmail(siteConfig.secondaryEmail),
+            value: secondaryEmail,
+            action: () => copyEmail(secondaryEmail),
           },
         ]
       : []),

@@ -11,8 +11,20 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    {
+      icon: Github,
+      href:
+        siteConfig.socialLinks.find((l) => l.name === "GitHub")?.url ||
+        "https://github.com/KhlifiIsmail",
+      label: "GitHub",
+    },
+    {
+      icon: Linkedin,
+      href:
+        siteConfig.socialLinks.find((l) => l.name === "LinkedIn")?.url ||
+        "https://linkedin.com",
+      label: "LinkedIn",
+    },
     { icon: Mail, href: `mailto:${siteConfig.email}`, label: "Email" },
   ];
 
@@ -32,15 +44,17 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <div className="flex flex-col gap-2">
-              {["About", "Experience", "Projects", "Contact"].map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  {link}
-                </a>
-              ))}
+              {["About", "Experience", "Skills", "Projects", "Contact"].map(
+                (link) => (
+                  <a
+                    key={link}
+                    href={`#${link.toLowerCase()}`}
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    {link}
+                  </a>
+                )
+              )}
             </div>
           </div>
 
@@ -77,7 +91,7 @@ export const Footer: React.FC = () => {
             in {siteConfig.location}
           </p>
           <p className="text-gray-500 text-xs">
-            Built with Next.js & Tailwind CSS
+            Built with Next.js 15, Tailwind CSS 4 & Framer Motion
           </p>
         </div>
       </div>

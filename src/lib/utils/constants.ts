@@ -7,17 +7,18 @@ export const siteConfig: SiteConfig = {
   title: "Full Stack Developer & AI/ML Engineer",
   description:
     "Building exceptional digital experiences with modern web technologies and artificial intelligence",
-  email: "ismail.khlifi@example.com",
+  email: "ikhlifi666@gmail.com",
+  secondaryEmail: "ismail.khliffi@gmail.com",
   location: "Tunis, Tunisia",
   socialLinks: [
     {
       name: "GitHub",
-      url: "https://github.com/ismailkhlifi",
+      url: "https://github.com/KhlifiIsmail",
       icon: "github",
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/ismailkhlifi",
+      url: "https://www.linkedin.com/in/ismail-khlifi-72999023a/",
       icon: "linkedin",
     },
   ],

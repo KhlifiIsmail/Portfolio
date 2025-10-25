@@ -4,7 +4,13 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Sparkles } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  Sparkles,
+  Rocket,
+  CheckCircle,
+} from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -44,7 +50,8 @@ export const Projects: React.FC = () => {
           Featured Projects
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
-          A showcase of my recent work and side projects
+          A showcase of my work - from AI-powered platforms to full-stack
+          applications
         </p>
         <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto" />
 
@@ -95,12 +102,28 @@ export const Projects: React.FC = () => {
                   whileHover={{ backgroundColor: "rgba(0,0,0,0)" }}
                   transition={{ duration: 0.3 }}
                 />
-                {project.featured && (
-                  <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-yellow-500/90 text-yellow-900 text-xs font-bold flex items-center gap-1">
-                    <Sparkles size={12} />
-                    Featured
-                  </div>
-                )}
+
+                {/* Status Badges */}
+                <div className="absolute top-3 right-3 flex gap-2">
+                  {project.featured && (
+                    <div className="px-3 py-1 rounded-full bg-yellow-500/90 text-yellow-900 text-xs font-bold flex items-center gap-1">
+                      <Sparkles size={12} />
+                      Featured
+                    </div>
+                  )}
+                  {project.status === "in-development" && (
+                    <div className="px-3 py-1 rounded-full bg-orange-500/90 text-white text-xs font-bold flex items-center gap-1">
+                      <Rocket size={12} />
+                      In Dev
+                    </div>
+                  )}
+                  {project.live && (
+                    <div className="px-3 py-1 rounded-full bg-green-500/90 text-white text-xs font-bold flex items-center gap-1">
+                      <CheckCircle size={12} />
+                      Live
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Content */}
@@ -181,7 +204,7 @@ export const Projects: React.FC = () => {
       >
         <p className="text-gray-400 mb-4">Want to see more of my work?</p>
         <Button
-          href="https://github.com"
+          href="https://github.com/KhlifiIsmail"
           variant="primary"
           icon={<Github size={18} />}
         >

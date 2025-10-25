@@ -10,6 +10,7 @@ export interface Project {
   github?: string;
   live?: string;
   featured: boolean;
+  status?: "completed" | "in-development";
   metrics?: {
     label: string;
     value: string;
@@ -41,6 +42,7 @@ export interface SiteConfig {
   title: string;
   description: string;
   email: string;
+  secondaryEmail?: string;
   location: string;
   socialLinks: SocialLink[];
 }

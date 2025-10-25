@@ -12,20 +12,26 @@ import { siteConfig } from "@/lib/utils/constants";
 import { fadeInUp } from "@/lib/utils/animations";
 
 export const Contact: React.FC = () => {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<string | null>(null);
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText(siteConfig.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const copyEmail = (email: string) => {
+    navigator.clipboard.writeText(email);
+    setCopied(email);
+    setTimeout(() => setCopied(null), 2000);
   };
 
   const contactInfo = [
     {
       icon: Mail,
-      label: "Email",
+      label: "Primary Email",
       value: siteConfig.email,
-      action: copyEmail,
+      action: () => copyEmail(siteConfig.email),
+    },
+    {
+      icon: Mail,
+      label: "Alternative Email",
+      value: siteConfig.secondaryEmail,
+      action: () => copyEmail(siteConfig.secondaryEmail),
     },
     {
       icon: MapPin,
@@ -80,9 +86,11 @@ export const Contact: React.FC = () => {
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center shrink-0">
                   <info.icon className="text-blue-400" size={24} />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <div className="text-sm text-gray-500 mb-1">{info.label}</div>
-                  <div className="text-white font-medium">{info.value}</div>
+                  <div className="text-white font-medium truncate">
+                    {info.value}
+                  </div>
                 </div>
                 {info.action && (
                   <button
@@ -90,7 +98,7 @@ export const Contact: React.FC = () => {
                     className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all"
                     aria-label="Copy email"
                   >
-                    {copied ? (
+                    {copied === info.value ? (
                       <CheckCircle size={20} className="text-green-400" />
                     ) : (
                       <Copy size={20} />

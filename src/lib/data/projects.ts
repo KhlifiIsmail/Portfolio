@@ -51,7 +51,7 @@ export const projects: Project[] = [
     ],
     image: "gradient-blue",
     github: "https://github.com/KhlifiIsmail/HireKit",
-    live: null,
+    live: "https://hirekit.ikhlif.me/",
     featured: true,
     status: "in-development",
     metrics: [
